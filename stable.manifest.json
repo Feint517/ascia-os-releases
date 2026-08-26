@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "generated_at": "2026-08-26T21:36:33Z",
+  "generated_at": "2026-08-26T23:37:48Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.16",
+      "version": "26.1.17",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.16/ascia_generic-aarch64-26.1.16.raucb",
-      "sha256": "ea8d13adf86f0bfa3690588dc63d538006bbd20c400dd0f53682a0e2a2cd526f",
-      "size": 609967668,
-      "released_at": "2026-08-26T21:36:33Z",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.17/ascia_generic-aarch64-26.1.17.raucb",
+      "sha256": "c21a1e1b63fbc0051ac60f6187983a199c1c4876b41a37503f761acf4ebd44ae",
+      "size": 609984052,
+      "released_at": "2026-08-26T23:37:48Z",
       "upstream": {
         "core": "2026.8.3",
         "supervisor": "2026.07.5",
@@ -29,11 +29,11 @@
         "ascia_diagnostics": "0.1.2116",
         "ascia_frontend": "0.4.2115",
         "ascia_network_manager": "0.1.2116",
-        "ascia_provisioning": "0.9.2116",
+        "ascia_provisioning": "0.9.2117",
         "ascia_security": "0.1.2116",
         "ascia_vpn": "0.3.2116"
       },
-      "notes": "Add-on images ship bytecode only; the plugin-blessing rule decides upstream plugin versions."
+      "notes": "Manifest signature verification in the feed client; publishing is now one operation with an independent CI check."
     }
   ]
 }
