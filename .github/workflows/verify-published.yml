@@ -1,0 +1,33 @@
+# Assert that what this repository publishes is true (Step 3.4).
+#
+# Appliances trust the signature, not this host — but a manifest that names a bundle which was never
+# uploaded, or whose digest no longer matches, breaks updates just as effectively as an attack and is
+# far likelier. This catches that, on every push, using only public artifacts.
+#
+# Deliberately NO secrets. The manifest signing key lives on the machine that builds the OS and does
+# not belong on shared infrastructure; a signature is worth exactly what the key's custody is worth.
+name: verify-published
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Daily, because an asset can be deleted or replaced long after the push that added it — and a
+    # release whose bundle has quietly vanished should not wait for the next publish to be noticed.
+    - cron: "0 6 * * *"
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install --quiet cryptography
+      - name: Manifest signature, and the artifacts it names
+        run: python3 verify-published.py
