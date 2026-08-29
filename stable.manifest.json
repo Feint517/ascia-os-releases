@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "generated_at": "2026-08-28T19:11:45Z",
+  "generated_at": "2026-08-29T12:30:05Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.20",
+      "version": "26.1.21",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.20/ascia_generic-aarch64-26.1.20.raucb",
-      "sha256": "7fb151712b4d48cec08a1843190605ef9ac36e84c2aed88d2e0349455e78a363",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.21/ascia_generic-aarch64-26.1.21.raucb",
+      "sha256": "1b51fbc6286ad2d03c652ada55720eb05f4fb1c3da07c4c29261db5357c220fd",
       "size": 617262644,
-      "released_at": "2026-08-28T19:11:45Z",
+      "released_at": "2026-08-29T12:30:05Z",
       "upstream": {
         "core": "2026.8.3",
         "supervisor": "2026.07.5",
@@ -33,7 +33,7 @@
         "ascia_security": "0.1.2121",
         "ascia_vpn": "0.3.2121"
       },
-      "notes": "Update reliability, and a fix for an appliance that could stop updating itself.\n\n- The pre-update safety backup now covers only the add-ons being changed. It used to be a full backup, which swept up staged installers \u2014 so backups grew to gigabytes and eventually filled the disk, at which point the appliance refused its own updates. Spent installers are now removed automatically, and one previous backup is kept so the last update can still be undone.\n- The front door waits for the appliance's manager service before starting. Previously, on an unlucky boot after an update, it could fall back to plain HTTP and stay there \u2014 which also made a healthy update look like it had failed.\n- Settings > Updates can now be set to apply updates automatically: weekly, monthly or annually, or left on manual approval. Release notes are shown before anything is installed.\n- The appliance now reports when a system component is running a version this release never validated, instead of quietly calling it current."
+      "notes": "Reliability fixes to the update system itself. Nothing about how your home behaves changes.\n\nWhen ASCIA could not apply an update to one of its own components, it previously reported the\nwrong cause and would refuse that version permanently \u2014 even when the real reason was temporary,\nsuch as storage being briefly full or another component still finishing an earlier update. It now\nworks out what actually happened, only takes recovery action when something is genuinely broken,\nand tries again once the temporary condition clears.\n\nIt also now checks that a component update matches the set this version of ASCIA OS was built and\ntested with, and declines anything that does not."
     }
   ]
 }
