@@ -1,18 +1,18 @@
 {
   "schema": 1,
-  "generated_at": "2026-08-29T12:30:05Z",
+  "generated_at": "2026-08-29T16:17:02Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.21",
+      "version": "26.1.22",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.21/ascia_generic-aarch64-26.1.21.raucb",
-      "sha256": "1b51fbc6286ad2d03c652ada55720eb05f4fb1c3da07c4c29261db5357c220fd",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.22/ascia_generic-aarch64-26.1.22.raucb",
+      "sha256": "4b1f913ac8dcfdfa73af324c3e0be197162efc10f7b9bfc1650498ab116d689b",
       "size": 617262644,
-      "released_at": "2026-08-29T12:30:05Z",
+      "released_at": "2026-08-29T16:17:02Z",
       "upstream": {
         "core": "2026.8.3",
-        "supervisor": "2026.07.5",
+        "supervisor": "2026.08.0",
         "plugins": {
           "cli": "2026.06.0",
           "dns": "2026.08.0",
@@ -33,7 +33,7 @@
         "ascia_security": "0.1.2121",
         "ascia_vpn": "0.3.2121"
       },
-      "notes": "Reliability fixes to the update system itself. Nothing about how your home behaves changes.\n\nWhen ASCIA could not apply an update to one of its own components, it previously reported the\nwrong cause and would refuse that version permanently \u2014 even when the real reason was temporary,\nsuch as storage being briefly full or another component still finishing an earlier update. It now\nworks out what actually happened, only takes recovery action when something is genuinely broken,\nand tries again once the temporary condition clears.\n\nIt also now checks that a component update matches the set this version of ASCIA OS was built and\ntested with, and declines anything that does not."
+      "notes": "Housekeeping for the component that manages the rest of the system.\n\nASCIA validates a specific set of underlying software versions together, and installs exactly that\nset. One component \u2014 the part that installs and updates everything else \u2014 was not covered by that\nguarantee, and could quietly move to a version ASCIA had not tested. It is now pinned like the\nrest, both when a release is built and every time the system starts.\n\nNothing about how your home behaves changes."
     }
   ]
 }
