@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "generated_at": "2026-08-29T16:17:02Z",
+  "generated_at": "2026-09-14T22:51:42Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.22",
+      "version": "26.1.32",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.22/ascia_generic-aarch64-26.1.22.raucb",
-      "sha256": "4b1f913ac8dcfdfa73af324c3e0be197162efc10f7b9bfc1650498ab116d689b",
-      "size": 617262644,
-      "released_at": "2026-08-29T16:17:02Z",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.32/ascia_generic-aarch64-26.1.32.raucb",
+      "sha256": "d65a195a77504a80bfd988d172b7c8561111b90692816104992c94bb397b38fb",
+      "size": 581340724,
+      "released_at": "2026-09-14T22:51:42Z",
       "upstream": {
         "core": "2026.8.3",
         "supervisor": "2026.08.0",
@@ -22,18 +22,18 @@
         }
       },
       "addons": {
-        "ascia_3d_engine": "0.3.2121",
-        "ascia_analytics": "0.1.2121",
-        "ascia_backup": "0.3.2121",
-        "ascia_device_manager": "0.3.2121",
-        "ascia_diagnostics": "0.1.2121",
-        "ascia_frontend": "0.5.2121",
-        "ascia_network_manager": "0.1.2121",
-        "ascia_provisioning": "0.12.2121",
-        "ascia_security": "0.1.2121",
-        "ascia_vpn": "0.3.2121"
+        "ascia_analytics": "0.3.2162",
+        "ascia_backup": "0.5.2158",
+        "ascia_device_manager": "0.6.2161",
+        "ascia_diagnostics": "0.2.2162",
+        "ascia_frontend": "0.20.2160",
+        "ascia_network_manager": "0.3.2158",
+        "ascia_plan_engine": "0.5.2161",
+        "ascia_provisioning": "0.23.2158",
+        "ascia_security": "0.3.2161",
+        "ascia_vpn": "0.5.2158"
       },
-      "notes": "Housekeeping for the component that manages the rest of the system.\n\nASCIA validates a specific set of underlying software versions together, and installs exactly that\nset. One component \u2014 the part that installs and updates everything else \u2014 was not covered by that\nguarantee, and could quietly move to a version ASCIA had not tested. It is now pinned like the\nrest, both when a release is built and every time the system starts.\n\nNothing about how your home behaves changes."
+      "notes": "One word, everywhere it appears.\n\nA place in your home is now called an area \u2014 the same word Home Assistant itself uses \u2014 rather than\na zone or a room, and the 3D view of your home is now the plan. That is the wording on screen, in\nthe address bar, and in the names of things underneath it.\n\nYour dashboard, floor plan and device placements carry over. A tile that named a place the old way\nis renamed where it sits rather than removed.\n\nIf you bookmarked the 3D view directly, its address has changed; the link in the sidebar is\ncorrect.\n\nNothing about how your home behaves changes."
     }
   ]
 }
