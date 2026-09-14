@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "generated_at": "2026-09-14T22:51:42Z",
+  "generated_at": "2026-09-14T23:56:35Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.32",
+      "version": "26.1.33",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.32/ascia_generic-aarch64-26.1.32.raucb",
-      "sha256": "d65a195a77504a80bfd988d172b7c8561111b90692816104992c94bb397b38fb",
-      "size": 581340724,
-      "released_at": "2026-09-14T22:51:42Z",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.33/ascia_generic-aarch64-26.1.33.raucb",
+      "sha256": "62537a3b15f3dfc465e678ccf0ddc7e8ebd93ee8995e1d9045f03ae1e7d5632d",
+      "size": 581344820,
+      "released_at": "2026-09-14T23:56:35Z",
       "upstream": {
         "core": "2026.8.3",
         "supervisor": "2026.08.0",
@@ -33,7 +33,7 @@
         "ascia_security": "0.3.2161",
         "ascia_vpn": "0.5.2158"
       },
-      "notes": "One word, everywhere it appears.\n\nA place in your home is now called an area \u2014 the same word Home Assistant itself uses \u2014 rather than\na zone or a room, and the 3D view of your home is now the plan. That is the wording on screen, in\nthe address bar, and in the names of things underneath it.\n\nYour dashboard, floor plan and device placements carry over. A tile that named a place the old way\nis renamed where it sits rather than removed.\n\nIf you bookmarked the 3D view directly, its address has changed; the link in the sidebar is\ncorrect.\n\nNothing about how your home behaves changes."
+      "notes": "A safety check was reverting good updates.\n\nAfter an update, ASCIA watches the system for a while and undoes the update if the appliance does\nnot come back healthy. That check was also treating \"a supporting component is not the very newest\nrelease available\" as a failure \u2014 but ASCIA deliberately holds those components at versions it has\ntested together, so that is the normal, intended state.\n\nThe result was that a perfectly healthy update could be undone for a reason undoing it could not\nchange. The check now looks only at things a rollback could actually fix.\n\nNothing about how your home behaves changes."
     }
   ]
 }
