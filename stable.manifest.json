@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "generated_at": "2026-09-15T22:33:50Z",
+  "generated_at": "2026-09-15T23:47:07Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.36",
+      "version": "26.1.37",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.36/ascia_generic-aarch64-26.1.36.raucb",
-      "sha256": "71a71ec7c4153561306d40f1733869933e5859d763cc799ce0ab5f926eb12e87",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.37/ascia_generic-aarch64-26.1.37.raucb",
+      "sha256": "c04f5c07ed22e1a9338e5e2ff0d6ae980a493989902f0386b5ee9927f4b6e9d0",
       "size": 581406260,
-      "released_at": "2026-09-15T22:33:50Z",
+      "released_at": "2026-09-15T23:47:07Z",
       "upstream": {
         "core": "2026.8.3",
         "supervisor": "2026.08.0",
@@ -33,7 +33,7 @@
         "ascia_security": "0.3.2168",
         "ascia_vpn": "0.5.2168"
       },
-      "notes": "Automatic backups were being left unencrypted, and were far larger than they needed to be.\n\nThe appliance takes a backup on a schedule, encrypts it, and deletes the unencrypted copy. A recent\nchange meant it could no longer confirm when Home Assistant had finished writing the backup \u2014 so it\ntreated a successful backup as a failure, and the encryption step never ran. Unencrypted copies were\nleft behind. That is fixed, and any that were left have been removed.\n\nSeparately, a scheduled backup was including the downloaded installer for a pending system update \u2014\naround 580 MB of a 582 MB backup, against roughly 1 MB of your actual settings and history. Update\ninstallers are downloaded again when needed, so they are no longer included. Backups are back to\nabout a megabyte.\n\nNothing about how your home behaves changes."
+      "notes": "Housekeeping for the machinery that builds and delivers updates.\n\nNo change to the appliance itself: this release ships exactly the same components as the last one.\nWhat changed is how the update image is assembled \u2014 it now downloads about a third as much when\nbuilt, and cleans up after itself instead of accumulating old copies.\n\nNothing about how your home behaves changes."
     }
   ]
 }
