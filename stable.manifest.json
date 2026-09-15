@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "generated_at": "2026-09-14T23:56:35Z",
+  "generated_at": "2026-09-15T15:07:06Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.33",
+      "version": "26.1.34",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.33/ascia_generic-aarch64-26.1.33.raucb",
-      "sha256": "62537a3b15f3dfc465e678ccf0ddc7e8ebd93ee8995e1d9045f03ae1e7d5632d",
-      "size": 581344820,
-      "released_at": "2026-09-14T23:56:35Z",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.34/ascia_generic-aarch64-26.1.34.raucb",
+      "sha256": "7e0cf5a2b95250a3fff3a4b181168ff3525755c400b0dd6975ab52eee3dd25c7",
+      "size": 581369396,
+      "released_at": "2026-09-15T15:07:06Z",
       "upstream": {
         "core": "2026.8.3",
         "supervisor": "2026.08.0",
@@ -22,18 +22,18 @@
         }
       },
       "addons": {
-        "ascia_analytics": "0.3.2162",
-        "ascia_backup": "0.5.2158",
-        "ascia_device_manager": "0.6.2161",
-        "ascia_diagnostics": "0.2.2162",
-        "ascia_frontend": "0.20.2160",
-        "ascia_network_manager": "0.3.2158",
-        "ascia_plan_engine": "0.5.2161",
-        "ascia_provisioning": "0.23.2158",
-        "ascia_security": "0.3.2161",
-        "ascia_vpn": "0.5.2158"
+        "ascia_analytics": "0.3.2163",
+        "ascia_backup": "0.5.2163",
+        "ascia_device_manager": "0.6.2163",
+        "ascia_diagnostics": "0.2.2163",
+        "ascia_frontend": "0.20.2163",
+        "ascia_network_manager": "0.3.2163",
+        "ascia_plan_engine": "0.5.2163",
+        "ascia_provisioning": "0.24.2165",
+        "ascia_security": "0.3.2163",
+        "ascia_vpn": "0.5.2163"
       },
-      "notes": "A safety check was reverting good updates.\n\nAfter an update, ASCIA watches the system for a while and undoes the update if the appliance does\nnot come back healthy. That check was also treating \"a supporting component is not the very newest\nrelease available\" as a failure \u2014 but ASCIA deliberately holds those components at versions it has\ntested together, so that is the normal, intended state.\n\nThe result was that a perfectly healthy update could be undone for a reason undoing it could not\nchange. The check now looks only at things a rollback could actually fix.\n\nNothing about how your home behaves changes."
+      "notes": "Updates could stop arriving, and the appliance would not say so.\n\nASCIA deliberately holds Home Assistant's supporting components at versions it has tested\ntogether, rather than taking whatever is newest. Home Assistant reads that as \"somebody has fallen\nbehind and should catch up\", and refuses to install anything until they do \u2014 so an appliance could\nsit with an update already downloaded and installed on it, and quietly decline to apply it.\n\nThe same check also refused to restore a backup unless the appliance had a working internet\nconnection, even though everything needed for the restore was already on the device.\n\nThe appliance now tells Home Assistant that these are deliberate, every time it checks, so a\nrestore or a repair cannot silently switch it back on.\n\nNothing about how your home behaves changes."
     }
   ]
 }
