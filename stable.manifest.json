@@ -1,15 +1,15 @@
 {
   "schema": 1,
-  "generated_at": "2026-09-15T15:07:06Z",
+  "generated_at": "2026-09-15T17:32:25Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.34",
+      "version": "26.1.35",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.34/ascia_generic-aarch64-26.1.34.raucb",
-      "sha256": "7e0cf5a2b95250a3fff3a4b181168ff3525755c400b0dd6975ab52eee3dd25c7",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.35/ascia_generic-aarch64-26.1.35.raucb",
+      "sha256": "65e424fecb6b8b310212f52b0f544f9186eff7714fdf0c453001a86cd8c3e6a6",
       "size": 581369396,
-      "released_at": "2026-09-15T15:07:06Z",
+      "released_at": "2026-09-15T17:32:25Z",
       "upstream": {
         "core": "2026.8.3",
         "supervisor": "2026.08.0",
@@ -29,11 +29,11 @@
         "ascia_frontend": "0.20.2163",
         "ascia_network_manager": "0.3.2163",
         "ascia_plan_engine": "0.5.2163",
-        "ascia_provisioning": "0.24.2165",
+        "ascia_provisioning": "0.25.2166",
         "ascia_security": "0.3.2163",
         "ascia_vpn": "0.5.2163"
       },
-      "notes": "Updates could stop arriving, and the appliance would not say so.\n\nASCIA deliberately holds Home Assistant's supporting components at versions it has tested\ntogether, rather than taking whatever is newest. Home Assistant reads that as \"somebody has fallen\nbehind and should catch up\", and refuses to install anything until they do \u2014 so an appliance could\nsit with an update already downloaded and installed on it, and quietly decline to apply it.\n\nThe same check also refused to restore a backup unless the appliance had a working internet\nconnection, even though everything needed for the restore was already on the device.\n\nThe appliance now tells Home Assistant that these are deliberate, every time it checks, so a\nrestore or a repair cannot silently switch it back on.\n\nNothing about how your home behaves changes."
+      "notes": "Two fixes to the update machinery itself.\n\nAn appliance watches itself after an update and undoes the update if it does not come back healthy.\nThe previous release taught it to stop objecting to a setting ASCIA chooses on purpose \u2014 and Home\nAssistant then reported *that* as something to object to, so a perfectly good update could still be\nundone. The check now ignores both, and only reacts to things that undoing the update could\nactually fix.\n\nSecond, the appliance now checks that a downloaded update is intact before it writes anything. A\ndamaged download was caught, but only halfway through installing, and it left the spare copy of the\nsystem unusable in the process. It is now refused up front with a clear reason, and nothing is\ntouched.\n\nNothing about how your home behaves changes."
     }
   ]
 }
