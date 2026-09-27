@@ -1,39 +1,39 @@
 {
   "schema": 1,
-  "generated_at": "2026-09-15T23:47:07Z",
+  "generated_at": "2026-09-27T21:27:40Z",
   "channel": "stable",
   "releases": [
     {
-      "version": "26.1.37",
+      "version": "26.1.47",
       "board": "generic-aarch64",
-      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.37/ascia_generic-aarch64-26.1.37.raucb",
-      "sha256": "c04f5c07ed22e1a9338e5e2ff0d6ae980a493989902f0386b5ee9927f4b6e9d0",
-      "size": 581406260,
-      "released_at": "2026-09-15T23:47:07Z",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.47/ascia_generic-aarch64-26.1.47.raucb",
+      "sha256": "edbb974f8df3dfc068a8f421905c69d2df39cb81f09f53a175aeff1dca856f77",
+      "size": 1257175907,
+      "released_at": "2026-09-27T21:27:40Z",
       "upstream": {
-        "core": "2026.8.3",
-        "supervisor": "2026.08.0",
+        "core": "2026.9.3",
+        "supervisor": "2026.09.2",
         "plugins": {
-          "cli": "2026.06.0",
-          "dns": "2026.08.0",
+          "cli": "2026.09.0",
+          "dns": "2026.09.0",
           "audio": "2026.08.0",
           "multicast": "2026.08.0",
           "observer": "2026.08.0"
         }
       },
       "addons": {
-        "ascia_analytics": "0.3.2168",
-        "ascia_backup": "0.6.2168",
-        "ascia_device_manager": "0.6.2168",
-        "ascia_diagnostics": "0.2.2168",
-        "ascia_frontend": "0.20.2168",
-        "ascia_network_manager": "0.3.2168",
-        "ascia_plan_engine": "0.5.2168",
-        "ascia_provisioning": "0.25.2168",
-        "ascia_security": "0.3.2168",
-        "ascia_vpn": "0.5.2168"
+        "ascia_analytics": "0.3.2176",
+        "ascia_backup": "0.6.2176",
+        "ascia_device_manager": "0.7.2176",
+        "ascia_diagnostics": "0.2.2176",
+        "ascia_frontend": "0.21.2179",
+        "ascia_network_manager": "0.3.2176",
+        "ascia_plan_engine": "0.5.2176",
+        "ascia_provisioning": "0.26.2179",
+        "ascia_security": "0.3.2177",
+        "ascia_vpn": "0.5.2176"
       },
-      "notes": "Housekeeping for the machinery that builds and delivers updates.\n\nNo change to the appliance itself: this release ships exactly the same components as the last one.\nWhat changed is how the update image is assembled \u2014 it now downloads about a third as much when\nbuilt, and cleans up after itself instead of accumulating old copies.\n\nNothing about how your home behaves changes."
+      "notes": "Everything your appliance runs now updates together.\n\nThis release brings Home Assistant to 2026.9.3 and every ASCIA component to its newest version in\nthe same step. An update now lands completely or not at all: if any part fails to come up, the\nappliance returns on its own to exactly where it was. Rolling back by hand now takes every part back\ntoo, keeping your settings, your dashboard and your history.\n\nA sudden power cut in the middle of an update can no longer cause a good update to be undone, and\nthe account you create when you first set the appliance up now survives a power cut straight after."
     }
   ]
 }
