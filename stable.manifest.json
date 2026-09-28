@@ -1,8 +1,40 @@
 {
   "schema": 1,
-  "generated_at": "2026-09-27T21:27:40Z",
+  "generated_at": "2026-09-28T16:45:36Z",
   "channel": "stable",
   "releases": [
+    {
+      "version": "26.1.48",
+      "board": "generic-x86-64",
+      "url": "https://github.com/Feint517/ascia-os-releases/releases/download/os-26.1.48/ascia_generic-x86-64-26.1.48.raucb",
+      "sha256": "b0c07743a604d645c9e2d0b691f1197fc3ccbf1187e8f515a48d6ad0f29d7ce4",
+      "size": 1317542755,
+      "released_at": "2026-09-28T16:45:36Z",
+      "upstream": {
+        "core": "2026.9.3",
+        "supervisor": "2026.09.2",
+        "plugins": {
+          "cli": "2026.09.0",
+          "dns": "2026.09.0",
+          "audio": "2026.08.0",
+          "multicast": "2026.08.0",
+          "observer": "2026.08.0"
+        }
+      },
+      "addons": {
+        "ascia_analytics": "0.3.2176",
+        "ascia_backup": "0.6.2176",
+        "ascia_device_manager": "0.7.2176",
+        "ascia_diagnostics": "0.2.2176",
+        "ascia_frontend": "0.21.2179",
+        "ascia_network_manager": "0.3.2176",
+        "ascia_plan_engine": "0.5.2176",
+        "ascia_provisioning": "0.26.2179",
+        "ascia_security": "0.3.2177",
+        "ascia_vpn": "0.5.2176"
+      },
+      "notes": "The shipping board's first release. Updates arm their health check before a byte of the new slot is written, and activate the slot only after \u2014 a power cut can no longer boot an update unverified."
+    },
     {
       "version": "26.1.47",
       "board": "generic-aarch64",
